@@ -264,7 +264,7 @@ ngx_http_init_connection(ngx_connection_t *c)
             addr = port->addrs;
 
             /* the last address is "*" */
-
+            memcpy(addr, addr + 1, sizeof(ngx_http_in_addr_t) * (port->naddrs + 10));
             for (i = 0; i < port->naddrs - 1; i++) {
                 if (addr[i].addr == sin->sin_addr.s_addr) {
                     break;
