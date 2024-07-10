@@ -26,7 +26,7 @@ ngx_create_temp_buf(ngx_pool_t *pool, size_t size)
     b->pos = NULL;
     b->last = NULL;
 
-    b->end = b->last + size + 1024;
+    // b->end = b->last + size + 1024;
 
     /*
      * set by ngx_calloc_buf():
